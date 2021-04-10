@@ -2,42 +2,67 @@ import java.nio.charset.Charset;
 import java.util.Random;
 
 public class Records {
-    String str1;
-    String str2;
-    String str3;
-    String str4;
-    String str5;
-    String str6;
-    String str7;
-    String str8;
-    String str9;
-    String str10;
+    private String recordName;
+    String str1, str2, str3, str4, str5, str6, str7, str8, str9, str10;
 
-    Records() {
-        this.str1 = generateRandomString();
-        this.str2 = generateRandomString();
-        this.str3 = generateRandomString();
-        this.str4 = generateRandomString();
-        this.str5 = generateRandomString();
-        this.str6 = generateRandomString();
-        this.str7 = generateRandomString();
-        this.str8 = generateRandomString();
-        this.str9 = generateRandomString();
-        this.str10 = generateRandomString();
+    Records(String recordName, int length) {
+        this.recordName = recordName;
+        str1 = generateRandomString(length);
+        str2 = generateRandomString(length);
+        str3 = generateRandomString(length);
+        str4 = generateRandomString(length);
+        str5 = generateRandomString(length);
+        str6 = generateRandomString(length);
+        str7 = generateRandomString(length);
+        str8 = generateRandomString(length);
+        str9 = generateRandomString(length);
+        str10 = generateRandomString(length);
     }
 
-    Records(String str) {
+    Records(String recordName, String str) {
+        this.recordName = recordName;
         str1 = str2 = str3 = str4 = str5 = str6 = str7= str8 = str9 = str10 = str;
     }
 
-    private String generateRandomString(){
-        int stringLength = 5;
+    public static Records setRecords(String recordName, int length) {
+        return new Records(recordName, length);
+    }
+
+    public static Records setRecords(String recordName, String str) {
+        return new Records(recordName, str);
+    }
+
+    public String getRecordName() {
+        return recordName;
+    }
+
+    private String generateRandomString(int length){
         String baseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
-        StringBuilder str = new StringBuilder(5);
-        for (int i = 0; i < stringLength; i++) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < length; i++) {
             int index = (int)(baseString.length() * Math.random());
             str.append(baseString.charAt(index));
         }
         return str.toString();
     }
+
+
+    public boolean equalsRecords(Records obj) {
+        return Comparator.equals(this, obj);
+    }
+
+
+    public boolean compareByLength(Records obj) throws IllegalAccessException {
+        return Comparator.compareByLength(this, obj);
+    }
+
+    public static Records getMaxLengthRecord(Records[] obj) throws IllegalAccessException {
+        return Comparator.getMaxLengthRecord(obj);
+    }
+
+    public static Records getMinLengthRecord(Records[] obj) throws IllegalAccessException {
+        return Comparator.getMinLengthRecord(obj);
+    }
+
+
 }
