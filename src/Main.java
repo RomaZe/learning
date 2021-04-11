@@ -7,6 +7,7 @@ public class Main {
         Records rc4 = Records.setRecords("Record#4","int");
         Records rc5 = Records.setRecords("Record#5","int");
 
+
         // Check whether 2 objects are tha same with standard equals method
         System.out.println("Whether \"rc4\" and \"rc5\" objects are tha same comparing with standard equals method:");
         System.out.println(rc4.equals(rc5));

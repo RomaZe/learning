@@ -5,7 +5,7 @@ public class Records {
     private String recordName;
     String str1, str2, str3, str4, str5, str6, str7, str8, str9, str10;
 
-    Records(String recordName, int length) {
+    public Records(String recordName, int length) {
         this.recordName = recordName;
         str1 = generateRandomString(length);
         str2 = generateRandomString(length);
@@ -19,7 +19,7 @@ public class Records {
         str10 = generateRandomString(length);
     }
 
-    Records(String recordName, String str) {
+    public Records(String recordName, String str) {
         this.recordName = recordName;
         str1 = str2 = str3 = str4 = str5 = str6 = str7= str8 = str9 = str10 = str;
     }
@@ -40,8 +40,8 @@ public class Records {
         String baseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            int index = (int)(baseString.length() * Math.random());
-            str.append(baseString.charAt(index));
+            Double index = new Double(baseString.length() * Math.random());
+            str.append(baseString.charAt(index.intValue()));
         }
         return str.toString();
     }
