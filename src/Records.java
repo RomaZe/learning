@@ -24,14 +24,6 @@ public class Records {
         str1 = str2 = str3 = str4 = str5 = str6 = str7= str8 = str9 = str10 = str;
     }
 
-    public static Records setRecords(String recordName, int length) {
-        return new Records(recordName, length);
-    }
-
-    public static Records setRecords(String recordName, String str) {
-        return new Records(recordName, str);
-    }
-
     public String getRecordName() {
         return recordName;
     }

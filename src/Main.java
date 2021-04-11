@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) throws IllegalAccessException {
 
-        Records rc1 = Records.setRecords("Record#1", 7);
-        Records rc2 = Records.setRecords("Record#2",1);
-        Records rc3 = Records.setRecords("Record#3","str");
-        Records rc4 = Records.setRecords("Record#4","int");
-        Records rc5 = Records.setRecords("Record#5","int");
+        Records rc1 = new Records("Record#1", 7);
+        Records rc2 = new Records("Record#2",1);
+        Records rc3 = new Records("Record#3","str");
+        Records rc4 = new Records("Record#4","int");
+        Records rc5 = new Records("Record#5","int");
 
 
         // Check whether 2 objects are tha same with standard equals method
