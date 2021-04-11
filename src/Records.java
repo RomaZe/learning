@@ -41,7 +41,13 @@ public class Records {
         StringBuilder str = new StringBuilder();
         for (int i = 0; i < length; i++) {
             Double index = new Double(baseString.length() * Math.random());
-            str.append(baseString.charAt(index.intValue()));
+            try {
+                str.append(baseString.charAt(index.intValue()));
+            } catch (StringIndexOutOfBoundsException ae) {
+//                System.out.println("It's not possible to generate random string for Records object");
+//                System.out.println("Errors details: " + ae);
+                str.append(baseString.charAt(0));
+            }
         }
         return str.toString();
     }
