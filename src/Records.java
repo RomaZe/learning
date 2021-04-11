@@ -39,7 +39,7 @@ public class Records {
     private String generateRandomString(int length){
         String baseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvxyz";
         StringBuilder str = new StringBuilder();
-        for (int i = 0; i < length; i++) {
+        while (length > 0) {
             Double index = new Double(baseString.length() * Math.random());
             try {
                 str.append(baseString.charAt(index.intValue()));
@@ -48,6 +48,7 @@ public class Records {
 //                System.out.println("Errors details: " + ae);
                 str.append(baseString.charAt(0));
             }
+            finally { length--; }
         }
         return str.toString();
     }
