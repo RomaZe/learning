@@ -35,14 +35,13 @@ public class Main {
          * Max - object with the maximum length of the concatenation object's fields;
          * Min - object with the minimum length of the concatenation object's fields;
          */
-        Records[] records = {rc1, rc2, rc3, rc4};
 
-        Records maxRecord = Records.getMaxLengthRecord(records);
+        Records maxRecord = Records.getMaxLengthRecord(rc1, rc2, rc3, rc4, rc5);
         System.out.print("Maximum record is: ");
         System.out.println(maxRecord.getRecordName());
         System.out.println();
 
-        Records minRecord = Records.getMinLengthRecord(records);
+        Records minRecord = Records.getMinLengthRecord(rc1, rc2, rc3, rc4, rc5);
         System.out.print("Minimum record is: ");
         System.out.println(minRecord.getRecordName());
         System.out.println();

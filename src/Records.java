@@ -55,12 +55,12 @@ public class Records {
         return Comparator.compareByLength(this, obj);
     }
 
-    public static Records getMaxLengthRecord(Records[] obj) throws IllegalAccessException {
-        return Comparator.getMaxLengthRecord(obj);
+    public static Records getMaxLengthRecord(Records ... objArray) throws IllegalAccessException {
+        return Comparator.getMaxLengthRecord(objArray);
     }
 
-    public static Records getMinLengthRecord(Records[] obj) throws IllegalAccessException {
-        return Comparator.getMinLengthRecord(obj);
+    public static Records getMinLengthRecord(Records ... objArray) throws IllegalAccessException {
+        return Comparator.getMinLengthRecord(objArray);
     }
 
 
